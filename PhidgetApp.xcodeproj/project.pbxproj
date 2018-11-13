@@ -12,9 +12,16 @@
 		E34EE5FF219B75D400FBAA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34EE5FD219B75D300FBAA84 /* Main.storyboard */; };
 		E34EE601219B75D500FBAA84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34EE600219B75D500FBAA84 /* Assets.xcassets */; };
 		E34EE604219B75D500FBAA84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34EE602219B75D500FBAA84 /* LaunchScreen.storyboard */; };
+		E34EE610219B778100FBAA84 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34EE60F219B778100FBAA84 /* Question.swift */; };
+		E34EE612219B778C00FBAA84 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34EE611219B778C00FBAA84 /* QuestionBank.swift */; };
+		E34EE617219B7ADE00FBAA84 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E34EE615219B7ADE00FBAA84 /* ProgressHUD.bundle */; };
+		E34EE618219B7ADE00FBAA84 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E34EE616219B7ADE00FBAA84 /* ProgressHUD.m */; };
+		E4D0E4764421170EE3CF2162 /* Pods_PhidgetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF73843A5CC653D30805FBAE /* Pods_PhidgetApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B3B91FB3E8FD196A75D2D4D /* Pods-PhidgetApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhidgetApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhidgetApp/Pods-PhidgetApp.release.xcconfig"; sourceTree = "<group>"; };
+		828B2F8BFF267DA5548BDBF3 /* Pods-PhidgetApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhidgetApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhidgetApp/Pods-PhidgetApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E34EE5F6219B75D300FBAA84 /* PhidgetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhidgetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34EE5F9219B75D300FBAA84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E34EE5FB219B75D300FBAA84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,13 @@
 		E34EE600219B75D500FBAA84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E34EE603219B75D500FBAA84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E34EE605219B75D500FBAA84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E34EE60F219B778100FBAA84 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		E34EE611219B778C00FBAA84 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
+		E34EE613219B7ADD00FBAA84 /* PhidgetApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhidgetApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		E34EE614219B7ADE00FBAA84 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		E34EE615219B7ADE00FBAA84 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		E34EE616219B7ADE00FBAA84 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		FF73843A5CC653D30805FBAE /* Pods_PhidgetApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhidgetApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D0E4764421170EE3CF2162 /* Pods_PhidgetApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15CD63956D70FC88B185D9F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				828B2F8BFF267DA5548BDBF3 /* Pods-PhidgetApp.debug.xcconfig */,
+				4B3B91FB3E8FD196A75D2D4D /* Pods-PhidgetApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1E17B8DAB01071A12BFB4717 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF73843A5CC653D30805FBAE /* Pods_PhidgetApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E34EE5ED219B75D300FBAA84 = {
 			isa = PBXGroup;
 			children = (
 				E34EE5F8219B75D300FBAA84 /* PhidgetApp */,
 				E34EE5F7219B75D300FBAA84 /* Products */,
+				15CD63956D70FC88B185D9F8 /* Pods */,
+				1E17B8DAB01071A12BFB4717 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +94,12 @@
 				E34EE600219B75D500FBAA84 /* Assets.xcassets */,
 				E34EE602219B75D500FBAA84 /* LaunchScreen.storyboard */,
 				E34EE605219B75D500FBAA84 /* Info.plist */,
+				E34EE60F219B778100FBAA84 /* Question.swift */,
+				E34EE611219B778C00FBAA84 /* QuestionBank.swift */,
+				E34EE615219B7ADE00FBAA84 /* ProgressHUD.bundle */,
+				E34EE614219B7ADE00FBAA84 /* ProgressHUD.h */,
+				E34EE616219B7ADE00FBAA84 /* ProgressHUD.m */,
+				E34EE613219B7ADD00FBAA84 /* PhidgetApp-Bridging-Header.h */,
 			);
 			path = PhidgetApp;
 			sourceTree = "<group>";
@@ -71,9 +111,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E34EE608219B75D500FBAA84 /* Build configuration list for PBXNativeTarget "PhidgetApp" */;
 			buildPhases = (
+				71BE3CCB04670EADFD4C5E96 /* [CP] Check Pods Manifest.lock */,
 				E34EE5F2219B75D300FBAA84 /* Sources */,
 				E34EE5F3219B75D300FBAA84 /* Frameworks */,
 				E34EE5F4219B75D300FBAA84 /* Resources */,
+				E81F080066D09BF8B68D9EB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +138,7 @@
 				TargetAttributes = {
 					E34EE5F5219B75D300FBAA84 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -122,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E34EE617219B7ADE00FBAA84 /* ProgressHUD.bundle in Resources */,
 				E34EE604219B75D500FBAA84 /* LaunchScreen.storyboard in Resources */,
 				E34EE601219B75D500FBAA84 /* Assets.xcassets in Resources */,
 				E34EE5FF219B75D400FBAA84 /* Main.storyboard in Resources */,
@@ -130,11 +174,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		71BE3CCB04670EADFD4C5E96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhidgetApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E81F080066D09BF8B68D9EB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PhidgetApp/Pods-PhidgetApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Phidget22Swift/Phidget22Swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Phidget22Swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhidgetApp/Pods-PhidgetApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E34EE5F2219B75D300FBAA84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E34EE610219B778100FBAA84 /* Question.swift in Sources */,
+				E34EE612219B778C00FBAA84 /* QuestionBank.swift in Sources */,
+				E34EE618219B7ADE00FBAA84 /* ProgressHUD.m in Sources */,
 				E34EE5FC219B75D300FBAA84 /* ViewController.swift in Sources */,
 				E34EE5FA219B75D300FBAA84 /* AppDelegate.swift in Sources */,
 			);
@@ -280,8 +374,10 @@
 		};
 		E34EE609219B75D500FBAA84 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 828B2F8BFF267DA5548BDBF3 /* Pods-PhidgetApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PhidgetApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -290,6 +386,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jupiterandmars.PhidgetApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PhidgetApp/PhidgetApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -297,8 +395,10 @@
 		};
 		E34EE60A219B75D500FBAA84 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B3B91FB3E8FD196A75D2D4D /* Pods-PhidgetApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PhidgetApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -307,6 +407,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jupiterandmars.PhidgetApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PhidgetApp/PhidgetApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
