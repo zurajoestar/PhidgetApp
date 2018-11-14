@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     var pickedAnswer : Bool = false
     var questionNumber : Int = 0
     var score : Int = 0
+    var isReady : Bool = true
+    
     
     //for phidget
     let buttonArray = [DigitalInput(), DigitalInput()]
@@ -23,6 +25,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var isAnswerCorrectOrWrongLabel: UILabel!
     
     func attach_handler(sender: Phidget){
         do{
@@ -52,11 +55,21 @@ class ViewController: UIViewController {
     func state_change_button0(sender:DigitalInput, state:Bool){
         do{
             if(state == true){
-                print("Button Pressed")
-                try ledArray[0].setState(true)
-                pickedAnswer = true
-                checkAnswer()
-                nextQuestion()
+                print("Red Button Pressed")
+                
+                if(isReady == true){
+                
+                    try ledArray[0].setState(true)
+                    
+                    isReady = false
+                    
+//                pickedAnswer = true
+//                checkAnswer()
+//                nextQuestion()
+//                updateUI()
+                }
+                
+                
             }
             else{
                 print("Button Not Pressed")
@@ -72,11 +85,22 @@ class ViewController: UIViewController {
     func state_change_button1(sender:DigitalInput, state:Bool){
         do{
             if(state == true){
-                print("Button Pressed")
-                try ledArray[0].setState(true)
-                pickedAnswer = false
-                checkAnswer()
-                nextQuestion()
+                
+                if(isReady == true){
+                    print("Green Button Pressed")
+                    try ledArray[1].setState(true)
+                    isReady = false
+                    
+                }
+                
+                else{ // THIS RUNS IF ISREADY IS FALSE
+                    
+                }
+                
+                
+//                pickedAnswer = false
+//                checkAnswer()
+//                nextQuestion()
             }
             else{
                 print("Button Not Pressed")
@@ -133,17 +157,18 @@ class ViewController: UIViewController {
 
 
     func updateUI() {
-        
-        scoreLabel.text = "Score: \(score)"
-        
+        DispatchQueue.main.async {
+            self.scoreLabel.text = "Score: \(self.score)"
+        }
     }
     
     
     func nextQuestion() {
         
         if questionNumber <= 12 {
-            questionLabel.text = allQuestions.list[questionNumber].questionText
-            
+            DispatchQueue.main.async {
+                self.questionLabel.text = self.allQuestions.list[self.questionNumber].questionText
+            }
             updateUI()
         }
         else {
@@ -164,19 +189,31 @@ class ViewController: UIViewController {
     
     func checkAnswer() {
         
-        let correctAnswer = allQuestions.list[questionNumber].answer
+        if(questionNumber < 12 ){
+            
+            let correctAnswer = allQuestions.list[questionNumber].answer
         
-        if correctAnswer == pickedAnswer {
+            if correctAnswer == pickedAnswer {
             
-            ProgressHUD.showSuccess("Correct!")
+//            ProgressHUD.showSuccess("Correct!")
+                DispatchQueue.main.async {
+                self.isAnswerCorrectOrWrongLabel.text = "Correct!"
+            }
+                score = score + 1
+    }
             
-            score = score + 1
-        }
-            
-        else {
-            ProgressHUD.showError("Wrong!")
+            else {
+//            ProgressHUD.showError("Wrong!")
+                DispatchQueue.main.async {
+                    self.isAnswerCorrectOrWrongLabel.text = "Wrong!"
+                }
         }
         
+       
+                questionNumber += 1
+                print(questionNumber)
+        }
+
     }
     
     
