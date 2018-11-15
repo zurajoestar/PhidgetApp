@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var isAnswerCorrectOrWrongLabel: UILabel!
+    @IBOutlet weak var playerWhoPressedFirst: UILabel!
     
     func attach_handler(sender: Phidget){
         do{
@@ -58,15 +59,24 @@ class ViewController: UIViewController {
                 print("Red Button Pressed")
                 
                 if(isReady == true){
-                
+                    print("Red Button Pressed")
                     try ledArray[0].setState(true)
-                    
                     isReady = false
+                    DispatchQueue.main.async {
+                    self.playerWhoPressedFirst.text = "Red!"
+                    }
                     
 //                pickedAnswer = true
 //                checkAnswer()
 //                nextQuestion()
 //                updateUI()
+                }
+                else {
+                    pickedAnswer = true
+                    checkAnswer()
+                    nextQuestion()
+                    isReady = true
+                    try ledArray[0].setState(false)
                 }
                 
                 
@@ -90,17 +100,20 @@ class ViewController: UIViewController {
                     print("Green Button Pressed")
                     try ledArray[1].setState(true)
                     isReady = false
-                    
+                    DispatchQueue.main.async {
+                    self.playerWhoPressedFirst.text = "Green!"
+                    }
                 }
                 
                 else{ // THIS RUNS IF ISREADY IS FALSE
-                    
+                    pickedAnswer = false
+                    checkAnswer()
+                    nextQuestion()
+                    isReady = true
+                    try ledArray[1].setState(false)
                 }
                 
                 
-//                pickedAnswer = false
-//                checkAnswer()
-//                nextQuestion()
             }
             else{
                 print("Button Not Pressed")
